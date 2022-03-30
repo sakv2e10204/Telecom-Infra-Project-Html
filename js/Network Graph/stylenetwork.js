@@ -142,7 +142,7 @@ $(document).ready(function () {
         console.log("An error has occurred2.");
     });
 
-    $.getJSON("../Data/yang.json", function (data) {
+    $.getJSON("/Telecom-Infra-Project-Html/Data/yang.json", function (data) {
         eqpt_config = data;
         load_EqptConfig();
     }).fail(function () {
