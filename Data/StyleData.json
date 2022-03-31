@@ -57,8 +57,8 @@
   "Roadm": {
     "shape": "image",
     "size": 14,
-    "image": "newroadm.svg",
-    "err_image": "errroadm.svg",
+    "image": "cam.png",
+    "err_image": "cam.png",
     "node_type": "Roadm",
     "component_type": "node",
     "icon": {},
