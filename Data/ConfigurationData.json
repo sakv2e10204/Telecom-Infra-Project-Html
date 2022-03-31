@@ -10,7 +10,7 @@
   "node": {
     "site_length": 20,
  //   "dir": "https://sakv2e10204.github.io/Telecom-Infra-Project-Html/Assets/img/",
-       "dir": "./Assets/img/",
+       "dir": "../Assets/img/",
     "roadm_type": [
       "Default"
     ],
