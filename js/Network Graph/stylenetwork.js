@@ -4139,8 +4139,7 @@ function addNodes(data, callback) {
     var amp_category = "";
     if (nodeMode == nodeType.ROADM) {
         nodeDetails = configData.node[roadmJSON.node_type];
-      //  data.image = DIR + roadmJSON.err_image;
-         data.image = DIR ;
+       data.image = DIR + roadmJSON.err_image;     
         nodeFont = roadmJSON.font;
         nodeSize = roadmJSON.size;
         data.font = nodeFont;
