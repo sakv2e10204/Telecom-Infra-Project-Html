@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,11 +28,10 @@
     <script src="js/Network Graph/FileSaver.js"></script>
     <script src="js/Network Graph/jsstore.js"></script>
     <script src="js/Network Graph/jsstore.worker.js"></script>
-
+    
     <!--<script src="js/vis-network.min.js"></script>-->
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>-->
     <script src="js/visunminify.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
@@ -51,6 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE=" crossorigin="anonymous"></script>
     <script src="js/validation.js"></script>
 </head>
+
 <body class="body-index" onload="init(false);">
     <div class="loader" id="loader" style="display:none;">
         <div style="margin:200px auto;">
@@ -64,10 +66,10 @@
          data-autohide="false" data-delay="10000" style="position: absolute; top: 40px; right: 20px; z-index:9999;">
         <div class="toast-header">
             <div class="d-flex align-items-start" id="div_toaster">
-                <img id="img_src" class="rounded mr-2" alt="...">
-                <div class="w-80 text-break">
+                <img id="img_src" class="rounded mr-2" alt="..." width="35px">
+                <div class="w-90 text-break" style="margin-top: 6px;">
                     <strong class="mr-auto" id="caption"></strong>
-                    <p id="msg_content"></p>
+                    <p id="msg_content" class="errorSummary"></p>
                 </div>
                 <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -160,8 +162,8 @@
                     redo
                     <i class="fas fa-arrow-right  "></i>
                 </div>-->
-                <!--X:<input id="txtX" type="text" />Y:<input id="txtY" type="text" />
-                <button type="button" id="importEqptLink" class="btn upload-btn">
+                <!--X:<input id="txtX" type="text" />Y:<input id="txtY" type="text" />-->
+                <!--<button type="button" id="importEqptLink" class="btn upload-btn">
                     Import data
                     <img src="Assets/img/import-icon.png" class="mx-2" />
                 </button>-->
@@ -406,10 +408,7 @@
                             </span>
 
                             <div class="float-right d-flex">
-                                <button id="btnValidation"
-                                        style="background: #2b7c80; color: #fff; border: none; padding: 5px 20px; border-radius: 5px; width: 100%; margin-right: 10px; height: 38px; margin-top: 4px;">
-                                    Error Check
-                                </button>
+
                                 <div class="custom-control custom-checkbox" style="display: none; align-items: center">
                                     <input type="checkbox" class="custom-control-input" id="cbxSingleFiber">
                                     <label class="custom-control-label" for="cbxSingleFiber">Single fiber</label>
@@ -434,10 +433,13 @@
                                     <img src="./Assets/img/capture-image.png" />
                                 </a>
 
-                                <a href="#" id="btnSaveNetworkTop" data-toggle="tooltip" data-placement="top" title="Save">
+                                <a href="#" id="btnSaveNetworkTop" data-toggle="tooltip" data-placement="top" title="Save As">
                                     <img src="./Assets/img/save.png" />
                                 </a>
-
+                                <button id="btnValidation"
+                                        style="background: #2b7c80; color: #fff; border: none; padding: 5px 20px; border-radius: 5px; width: 100%; margin-right: 10px; height: 38px; margin-top: 4px;">
+                                    Check Errors
+                                </button>
                             </div>
 
                         </div>
@@ -1027,7 +1029,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">
+                    <h5 class="modal-title ES" id="staticBackdropLabel">
                         Export
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
